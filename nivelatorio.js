@@ -1,19 +1,36 @@
-function computeGrades(grades) {
-    function getGrade(score) {
-        if (score >= 90) return "A";
-        if (score >= 80) return "B";
-        if (score >= 70) return "C";
-        if (score >= 60) return "D";
-        return "F";
-    }
-
-    let parsed = grades.map(getGrade);
-    let passed = parsed.filter(grade => grade !== "F").length;
-    let lose = parsed.filter(grade => grade === "F").length;
-    
-    return { parsed, passed, lose };
+function computegrades (studentgrades){
+    let parsed= [];
+    let pass= 0;
+    let lose= 0;
 }
+studentGrades.forEach((grade) => {
+    if (grade>= 90){
+        parsed.push("A");
+        passed++;
+    }
+    else if (grade >= 80) {
+        parsed.push("B");
+        passed++;
+      }
+      else if (grade >= 70) {
+        parsed.push("C");
+        passed++;
+      }
+      else if (grade >= 60) {
+        parsed.push("D");
+        passed++;
+      }
+      else {
+        parsed.push("F");
+        lose++;
+      }
+      })
+    return{
+        parsed,
+        pass,
+        lose,
+    };
+    const studentGrades= [100, 50, 65, 70, 85, 96, 45];
+    const result= computegrades(studentGrades);
+    console.log(result);
 
-const studentGrades = [100, 50, 65, 70, 85, 96, 45];
-const result = computeGrades(studentGrades);
-console.log(result);
